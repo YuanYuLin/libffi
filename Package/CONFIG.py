@@ -28,6 +28,7 @@ def set_global(args):
         src_include_dir = iopc.getBaseRootFile("usr/include/arm-linux-gnueabi")
     elif arch == "x86_64":
         src_usr_lib_dir = iopc.getBaseRootFile("usr/lib/x86_64-linux-gnu")
+        src_include_dir = iopc.getBaseRootFile("usr/include/x86_64-linux-gnu")
     else:
         sys.exit(1)
     dst_lib_dir = ops.path_join(output_dir, "lib")
