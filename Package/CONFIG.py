@@ -47,10 +47,12 @@ def MAIN_EXTRACT(args):
     set_global(args)
 
     ops.mkdir(dst_lib_dir)
-    ops.copyto(ops.path_join(src_usr_lib_dir, "libffi.so.6.0.4"), dst_lib_dir)
-    ops.ln(dst_lib_dir, "libffi.so.6.0.4", "libffi.so.6.0")
-    ops.ln(dst_lib_dir, "libffi.so.6.0.4", "libffi.so.6")
-    ops.ln(dst_lib_dir, "libffi.so.6.0.4", "libffi.so")
+
+    lib_so = "libffi.so.6.0.2"
+    ops.copyto(ops.path_join(src_usr_lib_dir, lib_so), dst_lib_dir)
+    ops.ln(dst_lib_dir, lib_so, "libffi.so.6.0")
+    ops.ln(dst_lib_dir, lib_so, "libffi.so.6")
+    ops.ln(dst_lib_dir, lib_so, "libffi.so")
 
     ops.mkdir(tmp_include_dir)
     ops.copyto(ops.path_join(src_include_dir, 'ffi.h'), tmp_include_dir)
